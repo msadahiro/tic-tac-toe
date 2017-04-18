@@ -11,16 +11,20 @@
     <script src="index.js"></script>
 </head>
 <body>
-    <div id='root'>
-
-    </div>
+    <div id='root'></div>
 </body>
 <script type="text/babel">
 class Square extends React.Component {
+    constructor(){
+        super();
+        this.state = {
+            value:null
+        }
+    }
   render() {
     return (
-      <button className="square">
-        {this.props.value}
+      <button className="square" onClick = { () => this.setState({value:'X'})}>
+        {this.state.value}
       </button>
     );
   }
